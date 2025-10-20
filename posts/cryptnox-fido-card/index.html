@@ -313,6 +313,19 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Cryptnox Fido Card
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -324,6 +337,52 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#available-features-and-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      Available features and management
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enrollment-and-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enrollment and usage
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -366,6 +425,41 @@
   
     
   
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#available-features-and-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      Available features and management
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enrollment-and-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enrollment and usage
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -429,6 +523,28 @@
 </tr>
 </tbody>
 </table>
+<table>
+<thead>
+<tr>
+<th>FIDO Authenticator Level</th>
+<th>FIPS Certified</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Level 1</td>
+<td>FIPS 140-3</td>
+</tr>
+</tbody>
+</table>
+<h2 id="overview">Overview</h2>
+<p>The Cryptnox Fido Card is about as straightforward as you can get for an NFC card. While it does not have things such as onboard biometrics or Bluetooth, the simplicity of the card doesn't impact real world usability. From their site, Cryptnox appears to target SMB and consumers, but they do provide information on configuring the card with Azure AD. Unfortunately, the card is currently not Microsoft verified, so you have to disable attestation in order to use the card. The card itself is a shade of black and has a bit of a luxury look to it. As a surprising and very thoughtful detail, the back of the card has a spot for writing a note - which might be helpful for remembering what you've enrolled on the card. Unlike the Idem Card or the Feitian Fingerprint card, this one feels exactly like a credit card, as far as the texture goes.</p>
+<h2 id="available-features-and-management">Available features and management</h2>
+<p>Along with FIDO2, the Fido Card supports FIDO U2F.</p>
+<h2 id="enrollment-and-usage">Enrollment and usage</h2>
+<p>As indicated, because of the lack of vetting by Microsoft, attestation must be disabled. Once set, the card enrolled without issue. The NFC support is excellent and the card had no orientation "sensitivity".</p>
+<p>The card worked consistently after enrollment without issue.</p>
+<p>The card was factory reset without issue.</p>
 
 
 
