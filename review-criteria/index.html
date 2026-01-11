@@ -484,6 +484,69 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#microsoft-compatible-and-verified" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Microsoft compatible and verified
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cost-and-ease-of-procurement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cost and ease of procurement
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#available-features-and-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Available features and management
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#design-and-build-quality" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Design and build quality
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testing-methodology" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Testing methodology
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -509,6 +572,27 @@
 
 <h1 id="review-criteria">Review Criteria<a class="headerlink" href="#review-criteria" title="Permanent link">&para;</a></h1>
 <p><img alt="Review Criteria" src="/images/review-logo.png" /></p>
+<h2 id="microsoft-compatible-and-verified">Microsoft compatible and verified<a class="headerlink" href="#microsoft-compatible-and-verified" title="Permanent link">&para;</a></h2>
+<p>When an organization comes across this, the first thought might be, “does Microsoft have some non-standard, Microsoft special implementation of the standards”. Thankfully, that is not the case. Per the docs article, Microsoft-compatible security key – Windows security | Microsoft Docs, a security key must support the following optional extensions from the FIDO2 CTAP protocol:</p>
+<p><img alt="Review Criteria" src="/images/review-criteria-img1.png" /></p>
+<p>And when we enumerate that list of requirements, we understand why these optional components of the protocol are indicated.
+‍
+The other half of that statement, the verified piece, is based on Microsoft requirements for testing the FIDO2 security key. The entire process is outlined here, Become a Microsoft-Compatible FIDO2 Security Key Vendor for sign-in to Entra ID | Microsoft Docs. Vendors keys that may meet the compatible piece, but have not submitted their key for verification, will fail enrollment. In Entra ID, you can disable Enforce attestation under the FIDO2 Security Key settings, to allow non-verified keys to enroll.</p>
+<h2 id="cost-and-ease-of-procurement">Cost and ease of procurement<a class="headerlink" href="#cost-and-ease-of-procurement" title="Permanent link">&para;</a></h2>
+<p>Even though purchasing at scale may provide for discounts, depending on the size and shape of the organization, key procurement cost is still important. I’ll be posting both the suggested/listed retail price from the manufacturer (if available), and the cost on Amazon. My baseline for ease of procurement – can I purchase it, and is it readily available, on Amazon. If not, what did I have to go through to purchase the key. If the vendor primarily uses Amazon as its sales channel, that’s the price I’ll list.</p>
+<h2 id="available-features-and-management">Available features and management<a class="headerlink" href="#available-features-and-management" title="Permanent link">&para;</a></h2>
+<p>I won’t dive into how all the other features, such as FIDO U2F function, but I will indicate which models support features beyond FIDO2, as some organizations may have use cases beyond Entra ID for implementation. I’ll also highlight if any management software is available, but with a focus on FIDO2, PIN management and key reset are capable from within the native Windows 11 tooling, so software isn’t of significant importance.</p>
+<h2 id="design-and-build-quality">Design and build quality<a class="headerlink" href="#design-and-build-quality" title="Permanent link">&para;</a></h2>
+<p>A quick examination of the style and type of key, and any features that make it stand out, or fall behind, its competitors. Will also explore the ways in which the key can be carried around – will it (easily) attach to a lanyard, or does it belong on a keychain. And looking at the ways in which the key can be used – USB, NFC, or Bluetooth. The review will also indicate the FIDO Authenticator Certification Level, which you can find more information on here, Certified Authenticator Levels – FIDO Alliance.</p>
+<h2 id="testing-methodology">Testing methodology<a class="headerlink" href="#testing-methodology" title="Permanent link">&para;</a></h2>
+<p>For enrollment and management of the keys, I’m going to be using a Dell Inspiron 3482, from my stock of lab devices. It may not be a corporate fleet laptop, but it gets the job done.
+‍
+The enrollment device is running Windows 11 Enterprise 21H2 and is Hybrid Entra ID joined. The same user account, which is a hybrid user, will be used across testing of all security keys.</p>
+<p>I’ll be testing usage on a second laptop that is Entra ID Joined only, but part of the same Entra ID tenant. That device is a Dell Inspiron 3195 running Windows 10 Pro 21H2.</p>
+<p>After enrollment, I’ll test authentication on both the laptops, and a Windows device of the Entra ID tenant.</p>
+<p>Finally, I’ll test the process of performing a factory reset on the key.</p>
+<p>If a key supports multiple methods of use, such as USB, NFC, Bluetooth, I will test all methods for enrollment and use on all devices.</p>
+<p>For NFC testing I’m using an ACS ACR1252U USB NFC Reader.</p>
 
 
 
